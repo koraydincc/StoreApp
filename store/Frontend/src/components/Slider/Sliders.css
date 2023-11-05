@@ -1,0 +1,14 @@
+.imgSlider{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+    max-width: 100%;
+}
+
