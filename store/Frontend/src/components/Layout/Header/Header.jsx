@@ -2,8 +2,6 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
-import Button from '@mui/material/Button';
 import './Header.css'
 
 function BasicExample() {
@@ -15,7 +13,6 @@ function BasicExample() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
             <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Contact</Nav.Link>
             <NavDropdown title="Shop" id="basic-nav-dropdown">
               <NavDropdown.Item href="#Men">MEN</NavDropdown.Item>
               <NavDropdown.Item href="#Women">
@@ -23,6 +20,8 @@ function BasicExample() {
               </NavDropdown.Item>
               
             </NavDropdown>
+            <Nav.Link href="#link">Contact</Nav.Link>
+            
             
           
             
