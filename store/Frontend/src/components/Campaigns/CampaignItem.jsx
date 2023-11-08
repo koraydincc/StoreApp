@@ -2,32 +2,34 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import Button from 'react-bootstrap/Button';
+
 
 const CampaignItem = () => {
   const campaign = [
     {
       id: 1,
       imgUrl: 'img/campaigns/banner1.png',
-      title: 'Kampanya 1',
-      description: 'Bu kampanya hakkında açıklama 1.',
+      title: "New Season Sale",
+   
     },
     {
       id: 2,
       imgUrl: 'img/campaigns/banner2.png',
-      title: 'Kampanya 2',
-      description: 'Bu kampanya hakkında açıklama 2.',
+      title: "New Season Sale",
+    
     },
     {
       id: 3,
       imgUrl: 'img/campaigns/banner3.png',
-      title: 'Kampanya 3',
-      description: 'Bu kampanya hakkında açıklama 3.',
+      title: "New Season Sale",
+
     },
     {
       id: 4,
       imgUrl: 'img/campaigns/banner4.png',
-      title: 'Kampanya 4',
-      description: 'Bu kampanya hakkında açıklama 4.',
+      title: "New Season Sale",
+   
     },
   ];
 
@@ -39,7 +41,8 @@ const CampaignItem = () => {
             <Card.Img variant="top" src={item.imgUrl} />
             <Card.Body>
               <Card.Title>{item.title}</Card.Title>
-              <Card.Text>{item.description}</Card.Text>
+            
+              <Card.Text><Button variant="outline-success">Go To Campaign</Button></Card.Text>
             </Card.Body>
           </Card>
         </Col>

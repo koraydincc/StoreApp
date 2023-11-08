@@ -1,24 +1,27 @@
 
 import './App.css';
-import Campaigns from './components/Campaigns/Campaigns';
-import Categories from './components/Categories/Categories';
-import Footer from './components/Layout/Footer/Footer';
-import Header from './components/Layout/Header/Header';
-import Policy from './components/Layout/Policy/Policy';
-import Products from './components/Products/Product';
-import Sliders from './components/Slider/Sliders';
+import HomePage from './Pages/HomePage';
+import React from 'react';
+import ShopPage from './Pages/ShopPage';
+import ContactPage from './Pages/ContactPage';
+import Auth from './components/Auth/Auth';
+import AuthPage from './Pages/AuthPage';
+import Cart from './components/Cart/Cart';
+import CartPage from './Pages/CartPage';
+import ProductDetailsPage from './Pages/ProductDetailsPage';
+
 
 function App() {
   return (
-    <div className="App">
-       <Header></Header>
-        <Sliders></Sliders>
-        <Categories></Categories>
-        <Campaigns></Campaigns>
-        <Products></Products>
-       <Policy></Policy>
-       <Footer></Footer>
-    </div>
+    //div yerine React.Fragment kullanırsak dom tarafında boşuna yer kaplamaz 
+    <React.Fragment>
+       {/* <HomePage></HomePage> */}
+       {/* <ShopPage></ShopPage> */}
+       {/* <ContactPage></ContactPage> */}
+       {/* <AuthPage></AuthPage> */}
+       {/* <CartPage></CartPage> */}
+       <ProductDetailsPage></ProductDetailsPage>
+    </React.Fragment>
   );
 }
 
