@@ -5,16 +5,55 @@ import ProductsData from '../../data.json'
 import Slider from "react-slick";
 
 
+
+function NextBtn({ onClick }) {
+  return (
+    <button className="glide__arrow glide__arrow--right" onClick={onClick}>
+      <i className="bi bi-chevron-right"></i>
+    </button>
+  );
+}
+
+
+function PrevBtn({ onClick }) {
+  return (
+    <button className="glide__arrow glide__arrow--left" onClick={onClick}>
+      <i className="bi bi-chevron-left"></i>
+    </button>
+  );
+}
+
+
 const Products = () => {
 
   const [products] = useState(ProductsData)
 
+
+
+
   const sliderSettings = {
-      dots: true,
+      dots: false,
       infinite: true,
-      speed: 500,
-      slidesToShow: products.length,
-      slidesToScroll: 1
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      nextArrow: <NextBtn></NextBtn>,
+      prevArrow: <PrevBtn></PrevBtn>,
+      autoplaySpeed: 3000,
+    autoplay: true,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 520,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   }
    
   return (
@@ -36,17 +75,13 @@ const Products = () => {
 
           </div>
           <div className="glide__arrows">
-            <button className="glide__arrow glide__arrow--left">
-              <i className="bi bi-chevron-left"></i>
-            </button>
-            <button className="glide__arrow glide__arrow--right">
-              <i className="bi bi-chevron-right"></i>
-            </button>
+            
+          
           </div>
         </div>
-      </div>
+    </div>
     </section>
-  );
+);
 };
 
 export default Products;
