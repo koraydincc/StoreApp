@@ -4,7 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import './Header.css'
 
-function BasicExample() {
+function BasicExample({setIsSearchShow}) {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
@@ -36,7 +36,7 @@ function BasicExample() {
               <a href="account.html" class="header-account">
                 <i class="bi bi-person"></i>
               </a>
-              <button class="search-button">
+              <button class="search-button" onClick={()=> {setIsSearchShow(true)}}>
                 <i class="bi bi-search"></i>
               </button>
               <a href="#123">

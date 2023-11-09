@@ -7,10 +7,10 @@ import Footer from '../components/Layout/Footer/Footer'
 const CartPage = () => {
   return (
     <React.Fragment>
-        <Header></Header>
+      
         <Cart></Cart>
         <Policy></Policy>
-        <Footer></Footer>
+     
       
     </React.Fragment>
   )

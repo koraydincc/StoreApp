@@ -7,10 +7,10 @@ import Footer from '../components/Layout/Footer/Footer'
 function AuthPage() {
   return (
     <React.Fragment>
-        <Header></Header>
+        
         <Auth></Auth>
         <Policy></Policy>
-        <Footer></Footer>
+       
     </React.Fragment>
   )
 }

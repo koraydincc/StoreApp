@@ -12,13 +12,13 @@ import Sliders from '../components/Slider/Sliders'
 function HomePage() {
   return (
     <div>
-        <Header></Header>
+    
         <Sliders></Sliders>
         <Categories></Categories>
         <Campaigns></Campaigns>
         <Products></Products>
         <Policy></Policy>
-        <Footer></Footer>
+      
     </div>
   )
 }

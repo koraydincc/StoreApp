@@ -15,12 +15,13 @@ function App() {
   return (
     //div yerine React.Fragment kullanırsak dom tarafında boşuna yer kaplamaz 
     <React.Fragment>
+      <HomePage></HomePage>
        {/* <HomePage></HomePage> */}
        {/* <ShopPage></ShopPage> */}
        {/* <ContactPage></ContactPage> */}
        {/* <AuthPage></AuthPage> */}
        {/* <CartPage></CartPage> */}
-       <ProductDetailsPage></ProductDetailsPage>
+       {/* <ProductDetailsPage></ProductDetailsPage> */}
     </React.Fragment>
   );
 }

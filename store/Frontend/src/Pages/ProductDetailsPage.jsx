@@ -7,10 +7,10 @@ import Footer from '../components/Layout/Footer/Footer'
 function ProductDetailsPage() {
   return (
     <React.Fragment>
-      <Header></Header>
+  
       <ProductDetails></ProductDetails>
       <Policy></Policy>
-      <Footer></Footer>
+ 
     </React.Fragment>
   )
 }

@@ -6,7 +6,7 @@ import Contact from '../components/Contact/Contact'
 function ContactPage() {
   return (
     <React.Fragment>
-      <Header></Header>
+    
       <Contact></Contact>
       <Policy></Policy>
     </React.Fragment>

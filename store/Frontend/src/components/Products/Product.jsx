@@ -1,7 +1,22 @@
+import { useState } from "react";
 import ProductItem from "./ProductItem";
 import "./Products.css";
+import ProductsData from '../../data.json'
+import Slider from "react-slick";
+
 
 const Products = () => {
+
+  const [products] = useState(ProductsData)
+
+  const sliderSettings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: products.length,
+      slidesToScroll: 1
+  }
+   
   return (
     <section className="products">
       <div className="container">
@@ -11,12 +26,14 @@ const Products = () => {
         </div>
         <div className="product-wrapper product-carousel">
           <div className="glide__track">
-            <ul className="product-list glide__slides" id="product-list">
-              <ProductItem />
-              <ProductItem />
-              <ProductItem />
-              <ProductItem />
-            </ul>
+              {console.log(products)}
+              <Slider {...sliderSettings}>
+                   {products.map((product) => (
+                    <ProductItem key={product.id} product={product} />   
+                    ))}
+             </Slider>
+
+
           </div>
           <div className="glide__arrows">
             <button className="glide__arrow glide__arrow--left">
