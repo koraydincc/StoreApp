@@ -4,26 +4,6 @@ const Info = () => {
   return (
     <div className="product-info">
       <h1 className="product-title">Ridley High Waist</h1>
-      <div className="product-review">
-        <ul className="product-star">
-          <li>
-            <i className="bi bi-star-fill"></i>
-          </li>
-          <li>
-            <i className="bi bi-star-fill"></i>
-          </li>
-          <li>
-            <i className="bi bi-star-fill"></i>
-          </li>
-          <li>
-            <i className="bi bi-star-fill"></i>
-          </li>
-          <li>
-            <i className="bi bi-star-half"></i>
-          </li>
-        </ul>
-        <span>2 reviews</span>
-      </div>
       <div className="product-price">
         <s className="old-price">$165</s>
         <strong className="new-price">$100</strong>

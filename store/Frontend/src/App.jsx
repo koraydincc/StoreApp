@@ -21,7 +21,7 @@ function App() {
        {/* <ContactPage></ContactPage> */}
        {/* <AuthPage></AuthPage> */}
        {/* <CartPage></CartPage> */}
-       {/* <ProductDetailsPage></ProductDetailsPage> */}
+       <ProductDetailsPage></ProductDetailsPage>
     </React.Fragment>
   );
 }

@@ -1,10 +1,8 @@
 import { useState } from "react";
 import ProductItem from "./ProductItem";
-import "./Products.css";
-import ProductsData from '../../data.json'
 import Slider from "react-slick";
-
-
+import productsData from "../../data.json";
+import "./Products.css";
 
 function NextBtn({ onClick }) {
   return (
@@ -13,6 +11,7 @@ function NextBtn({ onClick }) {
     </button>
   );
 }
+
 
 
 function PrevBtn({ onClick }) {
@@ -24,21 +23,20 @@ function PrevBtn({ onClick }) {
 }
 
 
+
 const Products = () => {
-
-  const [products] = useState(ProductsData)
-
-
+  const [products] = useState(productsData);
+ 
 
 
   const sliderSettings = {
-      dots: false,
-      infinite: true,
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      nextArrow: <NextBtn></NextBtn>,
-      prevArrow: <PrevBtn></PrevBtn>,
-      autoplaySpeed: 3000,
+    dots: false,
+    infinite: true,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    nextArrow: <NextBtn />,
+    prevArrow: <PrevBtn />,
+    autoplaySpeed: 3000,
     autoplay: true,
     responsive: [
       {
@@ -54,34 +52,26 @@ const Products = () => {
         },
       },
     ],
-  }
-   
+  };
+
   return (
     <section className="products">
+      
       <div className="container">
         <div className="section-title">
           <h2>Featured Products</h2>
           <p>Winter Collection New Morden Design</p>
         </div>
         <div className="product-wrapper product-carousel">
-          <div className="glide__track">
-              {console.log(products)}
-              <Slider {...sliderSettings}>
-                   {products.map((product) => (
-                    <ProductItem key={product.id} product={product} />   
-                    ))}
-             </Slider>
-
-
-          </div>
-          <div className="glide__arrows">
-            
-          
-          </div>
+          <Slider {...sliderSettings}>
+            {products.map((product) => (
+              <ProductItem productItem={product}  key={product.id} />
+            ))}
+          </Slider>
         </div>
-    </div>
+      </div>
     </section>
-);
+  );
 };
 
 export default Products;

@@ -3,8 +3,14 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import './Header.css'
+import  {useContext}  from 'react';
+import  {CartContext}  from "../../../context/CartProvider";
+
 
 function BasicExample({setIsSearchShow}) {
+
+  const { cartItems } = useContext(CartContext);
+  
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
@@ -43,11 +49,13 @@ function BasicExample({setIsSearchShow}) {
                 <i class="bi bi-heart"></i>
               </a>
               <div class="header-cart">
-                <a href="cart.html" class="header-cart-link">
-                  <i class="bi bi-bag"></i>
-                  <span class="header-cart-count">0</span>
-                </a>
-              </div>
+                   <a href="cart.html" class="header-cart-link">
+                            <i class="bi bi-bag"></i>
+                         <span className="header-cart-count">
+                             {cartItems.length}
+                        </span>
+                    </a>
+             </div>
             </div>
          </div>   
        
