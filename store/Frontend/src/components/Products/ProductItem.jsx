@@ -1,9 +1,16 @@
 import { useContext } from "react";
 import  {CartContext}  from "../../context/CartProvider";
 import "./ProductItem.css";
+import { Link } from "react-router-dom";
+
 
 const ProductItem = ({ productItem }) => {
-  const { addToCart } = useContext(CartContext);
+  const { cartItems,addToCart } = useContext(CartContext);
+
+
+  const filteredCart = cartItems.find((cartItem) => cartItem.id === productItem.id)
+
+  console.log(filteredCart)
 
   return (
     <div className="product-item glide__slide glide__slide--active">
@@ -30,15 +37,16 @@ const ProductItem = ({ productItem }) => {
           <button
             className="add-to-cart"
             onClick={() => addToCart(productItem)}
+            disabled={filteredCart}
           >
             <i className="bi bi-basket-fill"></i>
           </button>
           <button>
             <i className="bi bi-heart-fill"></i>
           </button>
-          <a href="#" className="product-link">
+          <Link to={`product/${productItem.id}`} className="product-link">
             <i className="bi bi-eye-fill"></i>
-          </a>
+          </Link>
           <a href="#">
             <i className="bi bi-share-fill"></i>
           </a>

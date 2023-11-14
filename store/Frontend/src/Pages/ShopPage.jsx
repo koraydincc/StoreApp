@@ -8,11 +8,9 @@ import Footer from '../components/Layout/Footer/Footer'
 function ShopPage() {
   return (
     <React.Fragment>
-        <Header></Header>
         <Categories></Categories>
         <Products></Products>
         <Policy></Policy>
-        <Footer></Footer>
     </React.Fragment>
   )
 }

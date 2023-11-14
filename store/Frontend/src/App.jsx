@@ -1,28 +1,24 @@
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import HomePage from "../src/Pages/HomePage";
+import ContactPage from "../src/Pages/ContactPage"
+import CartPage from '../src/Pages/CartPage'
+import ShopPage from '../src/Pages/ShopPage'
+import ProductDetailsPage from "../src/Pages/ProductDetailsPage"
+import AuthPage from '../src/Pages/AuthPage'
 
-import './App.css';
-import HomePage from './Pages/HomePage';
-import React from 'react';
-import ShopPage from './Pages/ShopPage';
-import ContactPage from './Pages/ContactPage';
-import Auth from './components/Auth/Auth';
-import AuthPage from './Pages/AuthPage';
-import Cart from './components/Cart/Cart';
-import CartPage from './Pages/CartPage';
-import ProductDetailsPage from './Pages/ProductDetailsPage';
-
+import "./App.css";
 
 function App() {
   return (
-    //div yerine React.Fragment kullanırsak dom tarafında boşuna yer kaplamaz 
-    <React.Fragment>
-      <HomePage></HomePage>
-       {/* <HomePage></HomePage> */}
-       {/* <ShopPage></ShopPage> */}
-       {/* <ContactPage></ContactPage> */}
-       {/* <AuthPage></AuthPage> */}
-       {/* <CartPage></CartPage> */}
-       <ProductDetailsPage></ProductDetailsPage>
-    </React.Fragment>
+    <Routes>
+ <Route path="/" element={<HomePage />} />
+      <Route path="/shop" element={<ShopPage />} />
+      <Route path="/contact" element={<ContactPage />} />
+      <Route path="/cart" element={<CartPage />} />
+      <Route path="/auth" element={<AuthPage />} />
+      <Route path="/product/:id" element={<ProductDetailsPage />} />
+    </Routes>
   );
 }
 

@@ -5,28 +5,33 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import './Header.css'
 import  {useContext}  from 'react';
 import  {CartContext}  from "../../../context/CartProvider";
+import { Link } from 'react-router-dom';
+
+
 
 
 function BasicExample({setIsSearchShow}) {
 
   const { cartItems } = useContext(CartContext);
   
+
+  
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="#home">Sports Store</Navbar.Brand>
+        <Navbar.Brand href="/">Sports Store</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
             <NavDropdown title="Shop" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#Men">MEN</NavDropdown.Item>
-              <NavDropdown.Item href="#Women">
-                WOMEN
+              <NavDropdown.Item href="shop">Men</NavDropdown.Item>
+              <NavDropdown.Item href="shop">
+                Women
               </NavDropdown.Item>
               
             </NavDropdown>
-            <Nav.Link href="#link">Contact</Nav.Link>
+            <Nav.Link href="contact">Contact</Nav.Link>
             
             
           
@@ -39,22 +44,22 @@ function BasicExample({setIsSearchShow}) {
         </Navbar.Collapse>
         <div class="header-right">
             <div class="header-right-links">
-              <a href="account.html" class="header-account">
+              <Link to="/auth" className='header-account'>
                 <i class="bi bi-person"></i>
-              </a>
+              </Link>
               <button class="search-button" onClick={()=> {setIsSearchShow(true)}}>
                 <i class="bi bi-search"></i>
               </button>
-              <a href="#123">
+              <a href="#">
                 <i class="bi bi-heart"></i>
               </a>
               <div class="header-cart">
-                   <a href="cart.html" class="header-cart-link">
+                   <Link to="/cart" class="header-cart-link">
                             <i class="bi bi-bag"></i>
                          <span className="header-cart-count">
                              {cartItems.length}
                         </span>
-                    </a>
+                    </Link>
              </div>
             </div>
          </div>   

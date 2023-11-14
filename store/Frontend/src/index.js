@@ -7,12 +7,15 @@ import MainLayout from "./components/Layouts/MainLayout";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import CartProvider from "./context/CartProvider";
+import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <CartProvider>
-    <MainLayout>
-      <App></App>
-    </MainLayout>
-  </CartProvider>
+  <BrowserRouter>
+    <CartProvider>
+      <MainLayout>
+        <App></App>
+      </MainLayout>
+    </CartProvider>
+  </BrowserRouter>
 );
