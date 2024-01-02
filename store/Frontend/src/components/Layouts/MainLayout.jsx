@@ -4,6 +4,7 @@ import Header from "../Layout/Header/Header";
 import Search from "../Modals/Search/Search";
 import { useState } from "react";
 
+
 const MainLayout = ({ children }) => {
 
   const [isSearchShow, setIsSearchShow] = useState(false)
