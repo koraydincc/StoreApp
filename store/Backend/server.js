@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const app = express();
 const mainRoute = require("./routes/index");
+const logger = require("morgan");
 const port = 5000;
 
 //gizli bilgileri gizlemek için dotenv kullandık
@@ -27,6 +28,12 @@ app.get("/", (req, res) => {
 app.get("/api", (req, res) => {
   res.send("Bu API Route");
 });
+
+//middlewares
+
+app.use(logger("dev"));
+
+app.use(express.json());
 
 app.use("/api", mainRoute);
 

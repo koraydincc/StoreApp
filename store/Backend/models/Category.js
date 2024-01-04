@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 
+//Veritabanı ile bağlantık kurduk ve name img adına semalar olusturduk
+
 const CategorySchema = mongoose.Schema(
   {
     name: { type: String, required: true },
