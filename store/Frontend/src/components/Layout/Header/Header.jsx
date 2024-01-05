@@ -13,6 +13,8 @@ import { Link } from 'react-router-dom';
 function BasicExample({setIsSearchShow}) {
 
   const { cartItems } = useContext(CartContext);
+
+  const user = localStorage.getItem("user");
   
 
   
@@ -61,6 +63,25 @@ function BasicExample({setIsSearchShow}) {
                         </span>
                     </Link>
              </div>
+             {user && (
+                  <button
+                    className="search-button"
+                    onClick={() => {
+                      if (
+                        window.confirm(
+                          "Çıkış yapmak istediğinize emin misiniz?"
+                        )
+                      ) {
+                        {
+                          localStorage.removeItem("user");
+                          window.location.href = "/";
+                        }
+                      }
+                    }}
+                  >
+                    <i className="bi bi-box-arrow-right"></i>
+                  </button>
+                )}
             </div>
          </div>   
        

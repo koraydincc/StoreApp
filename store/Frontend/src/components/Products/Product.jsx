@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ProductItem from "./ProductItem";
 import Slider from "react-slick";
-import productsData from "../../data.json";
+import PropTypes from "prop-types";
 import "./Products.css";
+import { message } from "antd";
 
 function NextBtn({ onClick }) {
   return (
@@ -12,7 +13,9 @@ function NextBtn({ onClick }) {
   );
 }
 
-
+NextBtn.propTypes = {
+  onClick: PropTypes.func,
+};
 
 function PrevBtn({ onClick }) {
   return (
@@ -22,16 +25,39 @@ function PrevBtn({ onClick }) {
   );
 }
 
-
+PrevBtn.propTypes = {
+  onClick: PropTypes.func,
+};
 
 const Products = () => {
-  const [products] = useState(productsData);
- 
+  const [products, setProducts] = useState([]);
 
+  const apiUrl = process.env.REACT_APP_BASE_URL;
+
+  useEffect(() => {
+
+  
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch(`${apiUrl}/api/products`);
+  
+        if (response.ok) {
+          const data = await response.json();
+          setProducts(data);
+        } else {
+          message.error("Veri getirme başarısız.");
+        }
+      } catch (error) {
+        console.log("Veri hatası:", error);
+      }
+    };
+  
+    fetchProducts();
+  }, [apiUrl]);
 
   const sliderSettings = {
     dots: false,
-    infinite: true,
+    infinite: false,
     slidesToShow: 4,
     slidesToScroll: 1,
     nextArrow: <NextBtn />,
@@ -53,25 +79,29 @@ const Products = () => {
       },
     ],
   };
-
+  console.log(products)
   return (
     <section className="products">
-      
       <div className="container">
         <div className="section-title">
           <h2>Featured Products</h2>
-          <p>Winter Collection New Morden Design</p>
         </div>
         <div className="product-wrapper product-carousel">
           <Slider {...sliderSettings}>
+            
             {products.map((product) => (
-              <ProductItem productItem={product}  key={product.id} />
+              
+              <ProductItem productItem={product} key={product._id} />
+              
             ))}
           </Slider>
+          
         </div>
       </div>
     </section>
   );
+  
 };
+
 
 export default Products;
